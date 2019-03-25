@@ -1,28 +1,49 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Header, Pizza, Price, Ingredients } from './components';
+import * as IngredientsService from './services/backend/ingredients.service';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            ingredients: [],
+            pizza: {},
+            price: {}
+        };
+    }
+
+    async componentDidMount() {
+        const ingredients = await IngredientsService.get();
+        this.setState({ ingredients });
+        console.log(ingredients);
+    }
+
+    async createIngredient(ingredient) {
+        const newIngredient = await IngredientsService.create(ingredient);
+        if(newIngredient instanceof Error) {
+            
+        } else {
+            this.setState({
+                ingredients: this.state.ingredients.concat([newIngredient])
+            });
+        }
+    }
+
+    onIngredientClick(ingredient) {
+        console.log(ingredient);
+    }
+
+    render() {
+        return (
+            <div className='App'>
+                <Header className='App-header' />
+                <Pizza />
+                <Ingredients ingredients={this.state.ingredients} onIngredientClick={this.onIngredientClick.bind(this)} onCreateClick={this.createIngredient.bind(this)} />
+                <Price />
+            </div>
+        );
+    }
 }
 
 export default App;
