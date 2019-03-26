@@ -6,9 +6,10 @@ import './ingredients-list.scss';
 export function IngredientsList({ ingredients = [], onIngredientClick }) {
     return (
         <div className='pw-ingredients__list'>
-            {ingredients.map(topping => (
+            {ingredients.map((ingredient, i) => (
                 <Ingredient
-                    topping={topping}
+                    key={i}
+                    ingredient={ingredient}
                     onClick={onIngredientClick}
                 />
             ))}
