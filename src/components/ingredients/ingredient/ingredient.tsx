@@ -2,7 +2,7 @@ import React from 'react';
 
 import './ingredient.scss';
 
-export function Ingredient({ ingredient, onClick }) {
+export function Ingredient({ ingredient, onClick }: any): JSX.Element {
     return (
         <div className='pw-ingredient mdl-card mdl-shadow--2dp'>
             <div className='pw-ingredient__title mdl-card__title'>

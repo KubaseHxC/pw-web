@@ -10,7 +10,6 @@
   display: flex;
   flex-grow: 1;
   flex-basis: 15%;
-  border: 1px solid black;
 }
 
 .pw-body {
@@ -18,14 +17,12 @@
   flex-grow: 12;
   flex-basis: 70%;
   flex-direction: row;
-  border: 1px solid black;
 }
 
 .pw-footer {
   display: flex;
   flex-grow: 5;
   flex-basis: 15%;
-  border: 1px solid black;
 }
 
 .App-link {
