@@ -1,5 +1,4 @@
 import { ProvinceVM } from '../../domain/models';
-import { async } from 'q';
 
 const get = async (countryId: number): Promise<ProvinceVM[]> => {
   return await fetch(`http://localhost:3001/provinces/${countryId}`, {

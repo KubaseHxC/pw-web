@@ -4,6 +4,6 @@ export class IngredientVM {
     description!: string;
     type!: 'simple' | 'dough';
     multiplicity!: number;
-    quantity?: number;
+    quantity: number = 0;
     selected: boolean = false;
 }

@@ -1,17 +1,22 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './components';
 
 import './App.css';
 import { Content } from './pages/content';
 import { CountryVM, ProvinceVM } from './domain/models';
-import { CountriesService, ProvincesService } from './services/backend';
+import { CountriesService } from './services/backend';
 
-export function App(): JSX.Element {
+export function App(): JSX.Element | null {
   const [countries, setCountries]: [CountryVM[], Function] = useState([]);
   useEffect(() => {
     async function requestCountries() {
       const reqCountries = await CountriesService.get();
       setCountries(reqCountries);
+      setLocation({
+        //@Todo delete
+        country: reqCountries[0],
+        province: reqCountries[0].provinces[0]
+      });
     }
     requestCountries();
   }, []);
@@ -21,26 +26,24 @@ export function App(): JSX.Element {
     Function
   ] = useState({});
 
-  const [provinces, setProvinces]: [ProvinceVM[], Function] = useState([]);
-  useEffect(() => {
-    async function requestProvinces() {
-      const reqProvinces = await ProvincesService.get(
-        location.country ? location.country.id : 1 // :'(
-      );
-      setCountries(reqProvinces);
-    }
-    requestProvinces();
-  }, [location.country]);
-
-  return (
+  return location && location.country && location.province ? (
     <div className="pw-app">
-      <Header className="pw-header" />
+      <Header
+        className="pw-header"
+        countries={countries}
+        onCountrySelect={(country: CountryVM) =>
+          setLocation({ country, province: null })
+        }
+        onProvinceSelect={(province: ProvinceVM) =>
+          setLocation({ ...location, province })
+        }
+      />
       <div className="pw-body">
-        <Content />
+        <Content location={location} />
       </div>
       <footer className="mdl-mini-footer" />
     </div>
-  );
+  ) : null;
 }
 
 export default App;
