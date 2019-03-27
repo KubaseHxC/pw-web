@@ -4,6 +4,7 @@ export class IngredientVM {
     description!: string;
     type!: 'simple' | 'dough';
     multiplicity!: number;
+    price!: number;
     quantity: number = 0;
     selected: boolean = false;
 }

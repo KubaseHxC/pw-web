@@ -1,4 +1,11 @@
 .pw-ingredients__container {
     display: flex;
     flex-basis: 60%;
+    flex-direction: column;
+    overflow: auto;
+    .pw-ingredients__list-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 }

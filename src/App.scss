@@ -1,0 +1,24 @@
+.pw-app {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    flex-grow: 1;
+    .pw-header {
+        display: flex;
+        flex-grow: 1;
+        flex-basis: 15%;
+    }
+
+    .pw-body {
+        display: flex;
+        flex-grow: 12;
+        flex-basis: 70%;
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    footer {
+        padding: 16px;
+    }
+}

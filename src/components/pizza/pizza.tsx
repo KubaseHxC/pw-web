@@ -16,13 +16,13 @@ export function Pizza({
   return (
     <div className="pw-pizza">
       <div className="pw-pizza__ingredients-container">
-        {ingredients.map((ingredient, i) => (
+        {/*ingredients.map((ingredient, i) => (
           <IngredientChip
             key={i}
             ingredient={ingredient}
             onDeleteClick={onDeleteClick}
           />
-        ))}
+        ))*/}
       </div>
     </div>
   );

@@ -1,3 +1,21 @@
 .pw-price {
     display: flex;
+    flex-direction: column;
+    .pw-price__total {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 10%;
+        h3 {
+            margin: 0px;
+        }
+    }
+    .pw-price__body {
+        display: flex;
+        justify-content: center;
+        flex-basis: 90%;
+        padding: 8px;
+        overflow-y: auto;
+    }
 }
