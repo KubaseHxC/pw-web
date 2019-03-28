@@ -1,16 +1,14 @@
 import { ProvinceVM } from '../../domain/models';
 
-const get = async (countryId: number): Promise<ProvinceVM[]> => {
-  return await fetch(`http://localhost:3001/provinces/${countryId}`, {
-    method: 'get'
-  }).then(res => res.json().then(parsedResult => parsedResult as ProvinceVM[]));
-};
-
-const update = async (province: Partial<ProvinceVM>): Promise<ProvinceVM> => {
-  return await fetch(`http://localhost:3001/provinces/${province.id}`, {
-    method: 'get',
-    body: JSON.stringify(province)
+const update = async (provinceId: number, tax: number): Promise<ProvinceVM> => {
+  return await fetch(`http://localhost:3001/provinces/${provinceId}`, {
+    method: 'put',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ additionalTax: tax })
   }).then(res => res.json().then(parsedResult => parsedResult as ProvinceVM));
 };
 
-export { get, update };
+export { update };

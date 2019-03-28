@@ -2,7 +2,6 @@ import React from 'react';
 
 import './pizza.scss';
 import { IngredientVM } from '../../domain/models';
-import { IngredientChip } from '../ingredients/chip/ingredient-chip';
 
 interface IPizzaProps {
   ingredients: IngredientVM[];

@@ -1,7 +1,7 @@
-import { IngredientVM, CountryVM, ProvinceVM } from '../../domain/models';
+import { IngredientVM } from '../../domain/models';
 
 const calculate = async (
-  location: { country: CountryVM; province: ProvinceVM },
+  location: { countryId: number; provinceId: number },
   ingredients: IngredientVM[]
 ): Promise<number> => {
   return await fetch('http://localhost:3001/package', {
@@ -11,8 +11,8 @@ const calculate = async (
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      country: location.country.id,
-      province: location.province.id,
+      country: location.countryId,
+      province: location.provinceId,
       ingredients: pluckIngredients(ingredients)
     })
   }).then(res => res.text().then(amount => Number(amount)));

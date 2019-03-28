@@ -1,6 +1,7 @@
 .pw-price {
     display: flex;
     flex-direction: column;
+    flex-basis: 95%;
     .pw-price__total {
         display:flex;
         flex-direction: row;
@@ -17,5 +18,8 @@
         flex-basis: 90%;
         padding: 8px;
         overflow-y: auto;
+        table {
+            min-width: 315px;
+        }
     }
 }
