@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Header } from './components';
 
-import './App.scss';
 import { Content } from './pages/content';
 import { LocalStorageController } from './services/local/local-storage.controller';
 import { PizzaVM } from './domain/models';
+
+import Heart from './assets/heart-regular.svg';
+import ReactIcon from './assets/react-brands.svg';
+import './App.scss';
 
 export function App(): JSX.Element {
     const [showModal, setShowModal] = useState(false);
@@ -27,7 +30,22 @@ export function App(): JSX.Element {
                     handleCloseModal={() => setShowModal(false)}
                 />
             </div>
-            <footer className='mdl-mini-footer' />
+            <footer className='mdl-mini-footer'>
+                <div className='mdl-mini-footer__left-section'>
+                    Made by Iván Luis Sánchez with{' '}
+                    <img
+                        src={ReactIcon}
+                        className='react-icon'
+                        style={{ height: '16px' }}
+                    />{' '}
+                    and{' '}
+                    <img
+                        src={Heart}
+                        className='heart-icon'
+                        style={{ height: '16px' }}
+                    />
+                </div>
+            </footer>
         </div>
     );
 }
