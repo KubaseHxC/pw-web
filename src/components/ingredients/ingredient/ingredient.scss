@@ -1,7 +1,6 @@
 .pw-ingredient {
     background-color: white;
     min-width: 200px;
-    max-width: 200px;
     min-height: 120px;
     margin: 8px;
     max-height: 120px;
@@ -11,6 +10,8 @@
     flex-direction: column;
     -webkit-align-items: center;
     align-items: center;
+    flex-basis: 31%;
+
     .pw-ingredient__title {
         font-size: 20px;
         padding: 0px;

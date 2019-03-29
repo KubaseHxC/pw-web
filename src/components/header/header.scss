@@ -1,4 +1,34 @@
 .pw-header {
-    max-height: 56px;
-    width: 100%;
+  max-height: 56px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .pw-header__title-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: indigo;
+    flex-basis: 100%;
+
+    .pw-header__logo {
+      img {
+        height: 45px;
+
+      }
+
+      &.right img {
+        transform: scaleX(-1);
+      }
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 16px;
+    a {
+        color: white;
+    }
+  }
 }

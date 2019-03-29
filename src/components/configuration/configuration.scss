@@ -1,0 +1,21 @@
+.pw-configuration {
+    width: 100%;
+    height: 100%;
+    .pw-configuration__container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .pw-configuration__form-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 16px;
+            flex-basis: 100%;
+        }
+
+        button {
+            bottom: 0px;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.pw-location {
+    flex-basis: 5%;
+    width: 100%;
+    min-height: auto;
+    min-width: auto;
+
+    .pw-location__form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: flex-start;
+
+        .pw-location__select {
+            flex-basis: 50%;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            overflow: hidden;
+            background: #fafafa 90% 50%;
+
+            select {
+                padding: 5px 8px;
+                width: 100%;
+                border: none;
+                box-shadow: none;
+                background: transparent;
+                background-image: none;
+                -webkit-appearance: none;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
