@@ -1,7 +1,8 @@
 import { IngredientVM } from '../../domain/models';
+import { BASE_URL } from '../../env';
 
 const get = (): Promise<IngredientVM[]> =>
-  fetch('http://localhost:3001/ingredients', {
+  fetch(`${BASE_URL}/ingredients`, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' }
   }).then(response =>

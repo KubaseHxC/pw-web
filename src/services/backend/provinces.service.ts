@@ -1,7 +1,8 @@
 import { ProvinceVM } from '../../domain/models';
+import { BASE_URL } from '../../env';
 
 const update = async (provinceId: number, tax: number): Promise<ProvinceVM> => {
-  return await fetch(`http://localhost:3001/provinces/${provinceId}`, {
+  return await fetch(`${BASE_URL}/provinces/${provinceId}`, {
     method: 'put',
     headers: {
       Accept: 'application/json',

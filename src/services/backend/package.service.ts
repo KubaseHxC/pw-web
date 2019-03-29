@@ -1,7 +1,8 @@
 import { IngredientVM, PizzaVM } from '../../domain/models';
+import { BASE_URL } from '../../env';
 
 const calculate = async (pizza: PizzaVM): Promise<number> => {
-    return await fetch('https://pizza-builder-api-git-add-now.kubasehxc.now.sh', {
+    return await fetch(`${BASE_URL}/package`, {
         method: 'post',
         headers: {
             Accept: 'application/json',

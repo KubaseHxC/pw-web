@@ -33,8 +33,17 @@ export function App(): JSX.Element {
             <footer className='mdl-mini-footer'>
                 <div className='mdl-mini-footer__left-section'>
                     Made by Iván Luis Sánchez with{' '}
-                    <img src={Heart} style={{ height: '16px' }} /> and{' '}
-                    <img src={ReactIcon} style={{ height: '16px' }} />
+                    <img
+                        src={ReactIcon}
+                        className='react-icon'
+                        style={{ height: '16px' }}
+                    />{' '}
+                    and{' '}
+                    <img
+                        src={Heart}
+                        className='heart-icon'
+                        style={{ height: '16px' }}
+                    />
                 </div>
             </footer>
         </div>
