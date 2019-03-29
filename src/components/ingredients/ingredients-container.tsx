@@ -18,7 +18,6 @@ export function Ingredients({
             <div className='pw-ingredients__list-wrapper'>
                 <h3>Masa</h3>
                 <IngredientsList
-                    className='pw-ingredients__dough-list'
                     ingredients={filterByType('dough')}
                     onIngredientClick={onIngredientClick}
                 />

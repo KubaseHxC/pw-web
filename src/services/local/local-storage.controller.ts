@@ -1,9 +1,5 @@
-export class LocalStorageController {
-    static entries = {
-        Pizza: 'pizza'
-    };
-
-    save<T>(entry: string, value: T) {
+export const LocalStorageController = {
+    save: <T>(entry: string, value: T) => {
         if (localStorage) {
             localStorage.setItem(entry, JSON.stringify(value));
         } else {
@@ -11,9 +7,9 @@ export class LocalStorageController {
                 'No local storage found, are you running Pizza Web on nodejs? ¬¬'
             );
         }
-    }
+    },
 
-    get<T>(entry: string): T | string | null {
+    get: <T>(entry: string): T | null => {
         if (localStorage) {
             const value: string | null = localStorage.getItem(entry);
             try {
@@ -23,7 +19,7 @@ export class LocalStorageController {
                     return value;
                 }
             } catch (err) {
-                return value;
+                return null;
             }
         } else {
             throw new Error(
@@ -31,4 +27,4 @@ export class LocalStorageController {
             );
         }
     }
-}
+};

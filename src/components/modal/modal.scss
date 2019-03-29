@@ -20,9 +20,9 @@
         flex-direction: column;
         position: fixed;
         background: white;
-        width: 50%;
+        width: 40%;
         height: 50%;
-        top: 50%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
         padding: 8px;
@@ -39,6 +39,9 @@
                 right: 8px;
                 cursor: pointer;
             }
+        }
+        .modal-content {
+            height: calc(88% - 26px);
         }
     }
 }

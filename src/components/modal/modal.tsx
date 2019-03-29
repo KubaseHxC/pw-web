@@ -15,7 +15,7 @@ export const Modal = ({ handleClose, show, title, children }: IModalProps) => {
 
   return (
     <div className={showHideClassName} onClick={handleClose}>
-          <section className="modal-main mdl-shadow--2dp" onClick={e => { e.stopPropagation(); return false;}}>
+          <section className="modal-main mdl-shadow--4dp" onClick={e => { e.stopPropagation(); return false;}}>
         <div className="modal-header">
           <h3>{title}</h3>
           <a className="material-icons" onClick={handleClose}>

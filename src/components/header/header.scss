@@ -8,12 +8,17 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    color: indigo;
     flex-basis: 100%;
 
-    .pw-header__logo img {
-      height: 45px;
+    .pw-header__logo {
+      img {
+        height: 45px;
 
-      &.right {
+      }
+
+      &.right img {
         transform: scaleX(-1);
       }
     }
